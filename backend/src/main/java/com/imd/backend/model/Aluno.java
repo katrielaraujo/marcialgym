@@ -9,10 +9,13 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
 public class Aluno extends Usuario{
+
+    public Aluno(){
+        this.tipoUsuario = TipoUsuario.ALUNO;
+    }
 
     @ManyToMany
     @JoinTable(

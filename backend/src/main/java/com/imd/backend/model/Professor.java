@@ -8,10 +8,13 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
 public class Professor extends Usuario{
+    public Professor(){
+        this.tipoUsuario = TipoUsuario.PROFESSOR;
+    }
+
     @ManyToMany
     @JoinTable(
             name = "professor_modalidade",
